@@ -8,8 +8,8 @@ class UserManager extends AbstractManager {
   async create(user) {
     // Add user
     const [result] = await this.database.query(
-      `insert into ${this.table} (pseudo) values (?)`,
-      [user.pseudo]
+      `insert into ${this.table} (pseudo, hashPassword) values (?,?)`,
+      [user.pseudo, user.hashPassword]
     );
     return result.insertId;
   }

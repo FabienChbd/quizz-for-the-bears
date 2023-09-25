@@ -1,6 +1,7 @@
 CREATE TABLE user (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   pseudo VARCHAR(255) NOT NULL UNIQUE,
+  hashPassword VARCHAR(255) NOT NULL,
   score INT);
 
 CREATE TABLE questions (
@@ -17,8 +18,8 @@ CREATE TABLE questions (
   REFERENCES user(id)
 );
 
-INSERT INTO user (pseudo)
-VALUES ('Fabien');
+INSERT INTO user (pseudo, hashPassword)
+VALUES ('Fabien','dev');
 
 INSERT INTO questions (quest, repA, repB, repC, repD, goodReponse)
 VALUES
