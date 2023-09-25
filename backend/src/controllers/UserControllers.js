@@ -10,7 +10,7 @@ const ranking = async (req, res) => {
   }
 };
 
-// Login et jeu
+// Jeu
 const read = async (req, res, next) => {
   try {
     const user = await models.user.read(req.params.id);
@@ -24,12 +24,24 @@ const read = async (req, res, next) => {
   }
 };
 
+// Login
+const login = async (req, res, next) => {
+  try {
+    res.sendStatus(200);
+  } catch (err) {
+    next(err);
+  }
+};
+
 // Mise a jour du score
 const update = async (req, res, next) => {
-  const user = req.body;
+  const { id } = req.params;
+  console.info("UserID:", id);
+  const { score } = req.body;
+  console.info(req.body);
   try {
-    const updateUser = await models.user.update(user);
-    res.status(201).json({ updateUser });
+    const updateUser = await models.user.update(id, score);
+    res.status(201).json(updateUser);
   } catch (err) {
     next(err);
   }
@@ -49,6 +61,7 @@ const add = async (req, res, next) => {
 module.exports = {
   ranking,
   read,
+  login,
   update,
   add,
 };

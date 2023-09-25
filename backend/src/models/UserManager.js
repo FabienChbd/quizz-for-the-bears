@@ -23,11 +23,20 @@ class UserManager extends AbstractManager {
     return rows[0];
   }
 
-  async update(user) {
+  async login(pseudo) {
+    // Retrieve a user by id
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where pseudo = ?`,
+      [pseudo]
+    );
+    return rows[0];
+  }
+
+  async update(id, score) {
     // Update an user by id
     const [result] = await this.database.query(
       `update ${this.table} set score = ? where id =?`,
-      [user.score, user.id]
+      [score, id]
     );
     return result;
   }
