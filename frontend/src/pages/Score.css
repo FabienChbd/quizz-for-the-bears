@@ -50,15 +50,15 @@
 }
 
 @media (max-width: 600px) {
+  .classementGeneral,
+  .classementPseudo,
+  .classementScore,
+  .classementPseudoET,
+  .classementScoreET {
+    font-size: 1.5rem;
+  }
 
-.classementGeneral,.classementPseudo,
-.classementScore, .classementPseudoET,
-.classementScoreET {
-  font-size: 1.5rem;
-}
-
-.btnEnd {
-  width : 80svw
-}
-
+  .btnEnd {
+    width: 80svw;
+  }
 }

@@ -53,8 +53,9 @@
   margin: auto;
 }
 
-.goodChoice {color: black;}
-
+.goodChoice {
+  color: black;
+}
 
 .questionC {
   width: 80svw;
@@ -75,31 +76,31 @@
 
 @media (max-width: 600px) {
   .createBox,
-.returnBox,
-.boxGoodReponse,
-.boxEnvoi {
+  .returnBox,
+  .boxGoodReponse,
+  .boxEnvoi {
     flex-direction: column;
     align-items: center;
   }
 
-.reponse,
-.goodReponse,
-.questionC,
-.btnEnvoi,
-.btnMenu {
+  .reponse,
+  .goodReponse,
+  .questionC,
+  .btnEnvoi,
+  .btnMenu {
     width: 90svw;
     font-size: 1rem;
-}
+  }
 
-.reponsesBox {
-  display: flex;
-  flex-direction: column;
+  .reponsesBox {
+    display: flex;
+    flex-direction: column;
+  }
 
-}
-
-.reponse,
-.goodReponse {
-  width : 80svw;}
+  .reponse,
+  .goodReponse {
+    width: 80svw;
+  }
 }
 
 .questionC {

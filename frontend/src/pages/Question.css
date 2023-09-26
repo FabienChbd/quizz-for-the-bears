@@ -71,22 +71,20 @@
 }
 
 @media (max-width: 600px) {
-
   .reponse,
-.question,
-.btnScore {
-  font-size: 1rem;
-  width : 80svw;
+  .question,
+  .btnScore {
+    font-size: 1rem;
+    width: 80svw;
+  }
 
-}
-
-.reponsesBox {
+  .reponsesBox {
     display: flex;
-  flex-direction: column;
-}
+    flex-direction: column;
+  }
 
-.btnScore {
-  width : 40svw;
-  margin-left : 30svw
-}
+  .btnScore {
+    width: 40svw;
+    margin-left: 30svw;
+  }
 }

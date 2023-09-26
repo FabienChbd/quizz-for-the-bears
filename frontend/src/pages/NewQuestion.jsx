@@ -121,10 +121,26 @@ export default function NewQuestion() {
               onChange={(e) => setGoodReponse(e.target.value)}
             >
               <option value="">---Choisissez la bonne réponse ?---</option>
-              {repA && repB && <option className="goodChoice" value="repA">{repA}</option>}
-              {repA && repB && <option className="goodChoice" value="repB">{repB}</option>}
-              {repA && repB && repC && <option className="goodChoice" value="repC">{repC}</option>}
-              {repA && repB && repD && <option className="goodChoice" value="repD">{repD}</option>}
+              {repA && repB && (
+                <option className="goodChoice" value="repA">
+                  {repA}
+                </option>
+              )}
+              {repA && repB && (
+                <option className="goodChoice" value="repB">
+                  {repB}
+                </option>
+              )}
+              {repA && repB && repC && (
+                <option className="goodChoice" value="repC">
+                  {repC}
+                </option>
+              )}
+              {repA && repB && repD && (
+                <option className="goodChoice" value="repD">
+                  {repD}
+                </option>
+              )}
               {(!repA || !repB) && (
                 <option value="">
                   Veuillez saisir d'abord une réponse A et B
