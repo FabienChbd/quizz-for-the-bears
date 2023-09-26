@@ -27,7 +27,11 @@ const read = async (req, res, next) => {
 // Login
 const login = async (req, res, next) => {
   try {
-    res.sendStatus(200);
+    if (req.user) {
+      res.status(200).json({ userId: req.user.id });
+    } else {
+      res.status(401).json({ error: "Identifiants incorrects" });
+    }
   } catch (err) {
     next(err);
   }
@@ -35,12 +39,12 @@ const login = async (req, res, next) => {
 
 // Mise a jour du score
 const update = async (req, res, next) => {
-  const { id } = req.params;
-  console.info("UserID:", id);
+  const { userId } = req.params;
+  console.info("UserID:", userId);
   const { score } = req.body;
   console.info(req.body);
   try {
-    const updateUser = await models.user.update(id, score);
+    const updateUser = await models.user.update(userId, score);
     res.status(201).json(updateUser);
   } catch (err) {
     next(err);

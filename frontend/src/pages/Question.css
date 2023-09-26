@@ -1,0 +1,92 @@
+.quizzBox {
+  display: flex;
+  width: 100svw;
+  justify-content: center;
+  padding-bottom: 5svh;
+}
+
+.reponsesBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 2svh;
+}
+.reponse,
+.question,
+.btnScore {
+  background-color: transparent;
+  margin: 1svw;
+  padding: 1svw;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 15svh 0;
+  border: solid white 2px;
+}
+
+.btnScore {
+  margin-left: 35svw;
+}
+
+.end {
+  color: rgb(255, 238, 0);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.score {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.btnScore,
+.end {
+  width: 30svw;
+  height: 5svh;
+}
+
+.reponse {
+  width: 30svw;
+  height: 7svh;
+  margin: auto;
+}
+
+.question {
+  width: 80svw;
+}
+
+.reponse-good-message,
+.reponse-bad-message {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.reponse-good-message {
+  color: rgb(255, 238, 0);
+}
+.reponse-bad-message {
+  color: red;
+}
+
+@media (max-width: 600px) {
+
+  .reponse,
+.question,
+.btnScore {
+  font-size: 1rem;
+  width : 80svw;
+
+}
+
+.reponsesBox {
+    display: flex;
+  flex-direction: column;
+}
+
+.btnScore {
+  width : 40svw;
+  margin-left : 30svw
+}
+}

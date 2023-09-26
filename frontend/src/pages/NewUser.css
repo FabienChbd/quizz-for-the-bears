@@ -1,0 +1,50 @@
+.validCreateUserForm,
+.createUserForm,
+.msgCreateUser {
+  display: flex;
+  width: 100svw;
+  justify-content: center;
+  padding-bottom: 5svh;
+}
+
+.inputCreateUser,
+.btnCreateUser {
+  background-color: transparent;
+  border: solid white 2px;
+  margin: 1svw;
+  padding: 1svw;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  width: 25svw;
+  height: 5svh;
+  border-radius: 15svh 0;
+}
+
+.success-message,
+.error-message {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.success-message {
+  color: rgb(255, 238, 0);
+}
+.error-message {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .validCreateUserForm,
+  .createUserForm,
+  .msgCreateUser {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inputCreateUser,
+  .btnCreateUser {
+    width: 90svw;
+    font-size: 1rem;
+  }
+}

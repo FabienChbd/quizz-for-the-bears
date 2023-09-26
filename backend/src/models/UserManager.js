@@ -23,6 +23,15 @@ class UserManager extends AbstractManager {
     return rows[0];
   }
 
+  async one({ pseudo, hashPassword }) {
+    // Retrieve a user by pseudo
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where pseudo = ? and hashPassword = ?`,
+      [pseudo, hashPassword]
+    );
+    return rows[0];
+  }
+
   async login(pseudo) {
     // Retrieve a user by id
     const [rows] = await this.database.query(

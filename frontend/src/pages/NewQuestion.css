@@ -1,0 +1,107 @@
+.createBox,
+.returnBox,
+.boxGoodReponse,
+.boxEnvoi {
+  display: flex;
+  width: 100svw;
+  justify-content: center;
+  padding-bottom: 5svh;
+}
+
+.boxGoodReponse {
+  padding-top: 2svh;
+}
+
+.reponsesBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 2svh;
+}
+
+.reponse,
+.goodReponse,
+.questionC,
+.btnEnvoi,
+.btnMenu {
+  background-color: transparent;
+  margin: 1svw;
+  padding: 1svw;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 15svh 0;
+  border: solid white 2px;
+}
+
+.questionC {
+  margin-left: 9svw;
+  margin-bottom: 2svh;
+}
+
+.btnEnvoi,
+.btnMenu {
+  width: 30svw;
+  height: 5svh;
+}
+
+.reponse,
+.goodReponse {
+  width: 30svw;
+  height: 7svh;
+  margin: auto;
+}
+
+.goodChoice {color: black;}
+
+
+.questionC {
+  width: 80svw;
+}
+
+.reponse-good-message,
+.reponse-bad-message {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.reponse-good-message {
+  color: rgb(255, 238, 0);
+}
+.reponse-bad-message {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .createBox,
+.returnBox,
+.boxGoodReponse,
+.boxEnvoi {
+    flex-direction: column;
+    align-items: center;
+  }
+
+.reponse,
+.goodReponse,
+.questionC,
+.btnEnvoi,
+.btnMenu {
+    width: 90svw;
+    font-size: 1rem;
+}
+
+.reponsesBox {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.reponse,
+.goodReponse {
+  width : 80svw;}
+}
+
+.questionC {
+  width: 80svw;
+}

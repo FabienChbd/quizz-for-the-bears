@@ -1,0 +1,37 @@
+.loginForm,
+.noAccount,
+.validForm {
+  display: flex;
+  width: 100svw;
+  justify-content: center;
+  padding-bottom: 5svh;
+}
+
+.loginInput,
+.btnLogin {
+  background-color: transparent;
+  border: solid white 2px;
+  margin: 1svw;
+  padding: 1svw;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  width: 25svw;
+  height: 5svh;
+  border-radius: 15svh 0;
+}
+
+@media (max-width: 600px) {
+  .loginForm,
+  .noAccount,
+  .validForm {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .loginInput,
+  .btnLogin {
+    width: 90svw;
+    font-size: 1rem;
+  }
+}

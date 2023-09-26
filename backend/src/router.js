@@ -19,11 +19,11 @@ router.post("/users/login", verifyUser, verifyPassword, UserControllers.login);
 // Création d'un user :
 router.post("/createUser", hashThePassword, UserControllers.add);
 // Mise a jour score :
-router.put("/users/update/:id", UserControllers.update);
+router.put("/users/update/:userId", UserControllers.update);
 
 // ***QUESTIONS***
 // Création d'une question
-router.post("/createQuest", QuestionsControllers.add);
+router.post("/createQuest/:authorId", QuestionsControllers.add);
 // Affichage aléatoire de 10 questions
 router.get("/questions", QuestionsControllers.randomize);
 module.exports = router;

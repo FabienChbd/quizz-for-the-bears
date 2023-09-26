@@ -1,0 +1,31 @@
+.choice {
+  display: flex;
+  width: 100svw;
+  justify-content: center;
+  padding-bottom: 5svh;
+}
+
+.btnChoice {
+  background-color: transparent;
+  border: solid white 2px;
+  margin: 1svw;
+  padding: 1svw;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  width: 30svw;
+  height: 5svh;
+  border-radius: 15svh 0;
+}
+
+@media (max-width: 600px) {
+  .choice {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btnChoice {
+    width: 90svw;
+    font-size: 1rem;
+  }
+}
