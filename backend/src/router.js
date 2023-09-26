@@ -1,13 +1,29 @@
 const express = require("express");
 
 const router = express.Router();
+const UserControllers = require("./controllers/UserControllers");
+const QuestionsControllers = require("./controllers/QuestionsControllers");
+const {
+  hashThePassword,
+  verifyPassword,
+  verifyUser,
+} = require("./services/auth");
 
-const itemControllers = require("./controllers/itemControllers");
+// ***USER***
+// Affichage du score final :
+router.get("/score", UserControllers.ranking);
+// Affichage de l'user lors du jeu :
+router.get("/users/:id", UserControllers.read);
+// Affichage de l'user lors du jeu :
+router.post("/users/login", verifyUser, verifyPassword, UserControllers.login);
+// Création d'un user :
+router.post("/createUser", hashThePassword, UserControllers.add);
+// Mise a jour score :
+router.put("/users/update/:id", UserControllers.update);
 
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
-
+// ***QUESTIONS***
+// Création d'une question
+router.post("/createQuest", QuestionsControllers.add);
+// Affichage aléatoire de 10 questions
+router.get("/questions", QuestionsControllers.randomize);
 module.exports = router;
