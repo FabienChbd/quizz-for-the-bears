@@ -18,8 +18,8 @@ CREATE TABLE questions (
   REFERENCES user(id)
 );
 
-INSERT INTO user (pseudo, hashPassword)
-VALUES ('Fabien','dev');
+INSERT INTO user (pseudo, hashPassword, score)
+VALUES ('FakeUser1','-',"10"),('FakeUser2','-',"8"),('FakeUser3','-',"6");
 
 INSERT INTO questions (quest, repA, repB, repC, repD, goodReponse)
 VALUES
@@ -35,7 +35,7 @@ VALUES
 ('D''où Thomas V est il originaire ?', 'Alpes', 'Pyrénées', 'Belgique', 'Vosges', 'repA'),
 ('D''où Fabien est il originaire ?', 'PACA', 'Auvergne', 'Limousin', 'Centre', 'repB'),
 ('Où a travaillé Waheb avant cette formation', 'Cash service', 'Easy Cash', 'Cash App', 'Cash Converters', 'repA'),
-('Quel est l''endroit préféré de Thomas D à 19 formation', 'Les canapés', 'La salle de formation', 'Le parking', 'Les bureux d''autonomies', 'repA'),
+('Quel est l''endroit préféré de Thomas D à 19 formation', 'Les canapés', 'La salle de formation', 'Le parking', 'Les bureaux d''autonomie', 'repA'),
 ('Où Nicolas W a t-il vécu avant d''arriver a Valence', 'Chine', 'Japon', 'Taiwan', 'Corée du sud', 'repC'),
 ('Comment s''apellait la première personne qui a quitté la formation', 'Laure', 'Laurence', 'Benjamin', 'Bryan', 'repD'),
 ('Comment s''apellait la deuxième personne qui a quitté la formation', 'Laure', 'Laurence', 'Benjamin', 'Bryan', 'repB'),

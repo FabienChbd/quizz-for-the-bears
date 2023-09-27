@@ -1,0 +1,64 @@
+.score {
+  color: rgb(255, 238, 0);
+}
+
+.classement,
+.end {
+  display: flex;
+  width: 100svw;
+  justify-content: center;
+}
+
+.classementPseudo,
+.classementScore,
+.classementGeneral,
+.btnEnd {
+  background-color: transparent;
+  margin: 0.25svw 1svw;
+  padding: 1svw;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 15svh 0;
+  border: solid white 2px;
+  width: 40svw;
+}
+
+.end {
+  margin-top: 4vh;
+}
+
+.classementPseudoET,
+.classementScoreET {
+  background-color: transparent;
+  margin: 1svw;
+  padding: 1svw;
+  font-size: 2rem;
+  color: darkblue;
+  background-color: white;
+  text-align: center;
+  border-radius: 15svh 0;
+  border: solid white 2px;
+  width: 40svw;
+}
+
+.classementGeneral {
+  width: 80svw;
+  font-size: 4rem;
+  color: darkblue;
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .classementGeneral,
+  .classementPseudo,
+  .classementScore,
+  .classementPseudoET,
+  .classementScoreET {
+    font-size: 1.5rem;
+  }
+
+  .btnEnd {
+    width: 80svw;
+  }
+}

@@ -5,4 +5,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(0, 25, 152);
+  background: radial-gradient(
+    circle,
+    rgba(0, 25, 152, 1) 0%,
+    rgba(4, 0, 65, 1) 100%
+  );
+}
+
+h1,
+h2 {
+  color: rgb(255, 238, 0);
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.nav {
+  height: 70svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .nav {
+    height: 80svh;
+  }
 }

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {  toast } from 'react-toastify';
+import "./Home.css";
 
 export default function Home() {
   const navigate = useNavigate();
-  const [pseudo, setPseudo] = useState("");
-  const [password, setPassword] = useState("");
+  const [pseudo, setPseudo] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleLogin = async () => {
     const data = {
@@ -13,7 +14,7 @@ export default function Home() {
       password,
     };
 
-    if (pseudo || password) {
+    if (pseudo && password) {
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/users/login`,
         {
@@ -25,10 +26,12 @@ export default function Home() {
           body: JSON.stringify(data),
         }
       );
-
       if (response.status === 200) {
         console.info("Connexion réussie");
-        navigate("/menu");
+        const responseData = await response.json();
+        const { userId } = responseData;
+        console.info(responseData);
+        navigate(`/menu/${userId}`);
       } else if (response.status === 400) {
         try {
           const responseData = await response.json();
@@ -37,14 +40,15 @@ export default function Home() {
           console.error("Erreur lors de l'analyse de la réponse JSON :", error);
         }
       } else {
-        alert("Erreur dans le pseudo ou mot de passe");
+        setErrorMessage("Erreur dans le pseudo ou mot de passe");
       }
-    } else {alert("Veuillez remplir tous les champs")}
+    } else {
+      setErrorMessage("Veuillez remplir tous les champs");
+    }
   };
 
   return (
-    <header className="App-header">
-
+    <div className="nav">
       <h2>Qui es tu ?</h2>
       <form
         onSubmit={(e) => {
@@ -52,30 +56,44 @@ export default function Home() {
           handleLogin();
         }}
       >
-        <input
-          type="text"
-          name="pseudo"
-          placeholder="Tape ton pseudo ici"
-          value={pseudo}
-          onChange={(e) => setPseudo(e.target.value)}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Tape ton password ici"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">C'est Parti !!!</button>
+        <div className="loginForm">
+          <input
+            className="loginInput"
+            type="text"
+            name="pseudo"
+            required
+            placeholder="Tape ton pseudo ici"
+            value={pseudo}
+            onChange={(e) => setPseudo(e.target.value)}
+          />
+          <input
+            className="loginInput"
+            type="password"
+            name="password"
+            required
+            placeholder="Tape ton password ici"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="validForm">
+          <button className="btnLogin" type="submit">
+            C'est Parti !!!
+          </button>
+        </div>
       </form>
-      <button
-        type="button"
-        onClick={() => {
-          navigate("/newUser");
-        }}
-      >
-        J'ai pas de compte !!!
-      </button>
-    </header>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <div className="noAccount">
+        <button
+          className="btnLogin"
+          type="button"
+          onClick={() => {
+            navigate("/newUser");
+          }}
+        >
+          J'ai pas de compte !!!
+        </button>
+      </div>
+    </div>
   );
 }

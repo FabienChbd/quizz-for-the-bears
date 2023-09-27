@@ -1,0 +1,9 @@
+.header {
+  height: 10svh;
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 20svh;
+  }
+}
