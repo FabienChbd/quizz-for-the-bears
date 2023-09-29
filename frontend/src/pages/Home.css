@@ -12,13 +12,15 @@
   background-color: transparent;
   border: solid white 2px;
   margin: 1svw;
-  padding: 1svw;
-  font-size: 2rem;
   color: white;
   text-align: center;
   width: 25svw;
   height: 5svh;
   border-radius: 15svh 0;
+}
+
+.loginInput {
+  font-size: 2rem;
 }
 
 @media (max-width: 600px) {

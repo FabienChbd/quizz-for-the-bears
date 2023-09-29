@@ -28,7 +28,8 @@ h2 {
 }
 
 .nav {
-  height: 70svh;
+  padding-top: 20svh;
+  height: 60svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,6 +45,7 @@ h2 {
   }
 
   .nav {
-    height: 80svh;
+    padding-top: 20svh;
+    height: 100svh;
   }
 }
