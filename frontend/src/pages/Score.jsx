@@ -29,7 +29,7 @@ export default function Score({ score }) {
   }, []);
 
   return (
-    <div className="nav">
+    <div className="Nav">
       <h2>Il est temps de regarder les scores !!!</h2>
       {loading ? (
         <p className="score">Chargement en cours...</p>

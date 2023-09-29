@@ -142,7 +142,7 @@ export default function NewQuestion() {
                 </option>
               )}
               {(!repA || !repB) && (
-                <option value="">
+                <option className="goodChoice" value="">
                   Veuillez saisir d'abord une réponse A et B
                 </option>
               )}
